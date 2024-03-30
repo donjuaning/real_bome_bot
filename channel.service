@@ -1,0 +1,17 @@
+[Unit]
+Description=tele_bot
+Documentation=/usr/lib/systemd/system/channel.service #systemctl enable mimotor.service #systemctl start mimotor.service #systemctl status mimotor.service -l
+After=network.target
+
+[Service]
+Type=simple
+User=ec2-user
+ExecStart=/usr/bin/node /home/ec2-user/tele_bot/channel_script.js
+ExecReload=/usr/bin/node /home/ec2-user/tele_bot/channel_script.js
+KillMode=process
+Restart=always
+RestartSec=1
+WorkingDirectory=/home/ec2-user/tele_bot/
+
+[Install]
+WantedBy=multi-user.target
