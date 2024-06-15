@@ -2,7 +2,7 @@
  * @Author: DonJuaning
  * @Date: 2024-03-18 11:46:13
  * @LastEditors: DonJuaning
- * @LastEditTime: 2024-06-15 19:36:36
+ * @LastEditTime: 2024-06-15 21:02:01
  * @FilePath: /real_bome_bot/app.js
  * @Description: 
  */
@@ -28,6 +28,7 @@ const snip = require("./func/snip")
 const delete_task = require("./func/delete_task")
 const check_task = require("./route/check_task")
 const transfer = require("./route/transfer")
+const find = require("./route/find")
 
 dotenv.config();
 
@@ -55,7 +56,7 @@ bot.onText(/\/check_task/,check_task);
 
 bot.onText(/\/transfer ([0-9A-Za-z]{44})/,transfer);
 
-bot.onText(/\/find ([0-9A-Za-z]{44})/,transfer);
+bot.onText(/\/find ([0-9A-Za-z]{44})/,find);
 
 
 // 监听用户点击
