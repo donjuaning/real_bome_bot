@@ -2,8 +2,8 @@
  * @Author: DonJuaning
  * @Date: 2024-03-22 15:21:18
  * @LastEditors: DonJuaning
- * @LastEditTime: 2024-03-23 15:25:41
- * @FilePath: /tele_bot/route/transfer.js
+ * @LastEditTime: 2024-06-15 20:17:19
+ * @FilePath: /real_bome_bot/route/transfer.js
  * @Description: 
  */
 const { Keypair, Connection, PublicKey, sendAndConfirmTransaction, Transaction, SystemProgram } = require("@solana/web3.js");
@@ -39,7 +39,7 @@ module.exports = async function transfer(msg, match) {
           client.on('error', err => bot.sendMessage(chatId, err));
           await client.connect();
           var my_task_list = await client.keys(chatId.toString() + ":*");
-          for (var i in my_task_list) {
+          if(my_task_list.length > 0){
             bot.sendMessage(chatId, "您有下发的开盘狙击任务,钱包被锁定。通过/check_task确认您的任务,直接输入代币地址可以开启删除任务菜单");
           }
           if (my_task_list.length == 0) {

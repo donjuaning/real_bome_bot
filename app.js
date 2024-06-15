@@ -2,8 +2,8 @@
  * @Author: DonJuaning
  * @Date: 2024-03-18 11:46:13
  * @LastEditors: DonJuaning
- * @LastEditTime: 2024-03-22 15:38:15
- * @FilePath: /tele_bot/app.js
+ * @LastEditTime: 2024-06-15 19:36:36
+ * @FilePath: /real_bome_bot/app.js
  * @Description: 
  */
 /*
@@ -54,6 +54,8 @@ bot.onText(/(^[0-9A-Za-z]{44})/,token);
 bot.onText(/\/check_task/,check_task);
 
 bot.onText(/\/transfer ([0-9A-Za-z]{44})/,transfer);
+
+bot.onText(/\/find ([0-9A-Za-z]{44})/,transfer);
 
 
 // 监听用户点击
